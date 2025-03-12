@@ -1,0 +1,144 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+
+model Guest {
+  id             String  @id @default(uuid())
+  firstName      String
+  lastName       String
+  email          String  @unique
+  phoneNumber    String
+  nationality    String
+  passportNumber String?  // Optional
+  bookings       Booking[]
+}
+
+model Booking {
+  id              String       @id @default(uuid())
+  guestId         String
+  safariPackageId String
+  bookingDate     DateTime     @default(now())
+  status         BookingStatus
+  totalCost       Float
+
+  guest          Guest          @relation(fields: [guestId], references: [id])
+  safariPackage  SafariPackage  @relation(fields: [safariPackageId], references: [id])
+  accommodationBookings AccommodationBooking[]
+  assignedGuides AssignedGuide[]
+  wildlifeSightings WildlifeSighting[]
+  payments       Payment[]
+}
+
+model SafariPackage {
+  id             String   @id @default(uuid())
+  packageName    String
+  description    String
+  location       String
+  durationDays   Int
+  pricePerPerson Float
+  imagePaths     Json // Stores an array of image URLs
+  maxGroupSize   Int
+  season         String
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+  bookings       Booking[]
+}
+
+model Accommodation {
+  id          String   @id @default(uuid())
+  name        String
+  location    String
+  type        AccommodationType
+  capacity    Int
+  pricePerNight Float
+  accommodationBookings AccommodationBooking[]
+}
+
+model AccommodationBooking {
+  id              String   @id @default(uuid())
+  bookingId       String
+  accommodationId String
+  checkInDate     DateTime
+  checkOutDate    DateTime
+  totalCost       Float
+
+  booking        Booking       @relation(fields: [bookingId], references: [id])
+  accommodation Accommodation @relation(fields: [accommodationId], references: [id])
+}
+
+model TourGuide {
+  id             String   @id @default(uuid())
+  firstName      String
+  lastName       String
+  experienceYears Int
+  languagesSpoken String
+  email          String  @unique
+  phoneNumber    String
+  assignedGuides AssignedGuide[]
+}
+
+model AssignedGuide {
+  id        String  @id @default(uuid())
+  bookingId String
+  guideId   String
+  assignmentDate DateTime @default(now())
+
+  booking Booking  @relation(fields: [bookingId], references: [id])
+  guide   TourGuide @relation(fields: [guideId], references: [id])
+}
+
+model WildlifeSighting {
+  id          String   @id @default(uuid())
+  bookingId   String
+  species     String
+  location    String
+  sightingTime DateTime @default(now())
+  notes       String?
+
+  booking     Booking @relation(fields: [bookingId], references: [id])
+}
+
+model Payment {
+  id               String   @id @default(uuid())
+  bookingId        String
+  amountPaid       Float
+  paymentMethod    PaymentMethod
+  paymentStatus    PaymentStatus
+  transactionReference String
+
+  booking Booking @relation(fields: [bookingId], references: [id])
+}
+
+enum BookingStatus {
+  PENDING
+  CONFIRMED
+  CANCELLED
+  COMPLETED
+}
+
+enum PaymentStatus {
+  PENDING
+  COMPLETED
+  FAILED
+}
+
+enum PaymentMethod {
+  CREDIT_CARD
+  MOBILE_MONEY
+  CASH
+}
+
+enum AccommodationType {
+  LODGE
+  TENT
+  CAMP
+}

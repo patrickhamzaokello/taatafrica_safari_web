@@ -4,38 +4,39 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Calendar, Clock, MapPin, Users } from "lucide-react"
 import { useEffect, useRef } from "react"
+import HomePage from "./cards"
 
 // Safari experiences data
 const safariExperiences = [
   {
     id: 1,
-    title: "Serengeti Migration Safari",
-    description: "Witness the spectacular wildebeest migration across the vast plains of the Serengeti.",
-    image: "https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&q=80&w=800",
+    title: "Gorilla Trekking Adventure",
+    description: "Explore Bwindi Impenetrable Forest and witness mountain gorillas in their natural habitat.",
+    image: "https://images.unsplash.com/photo-1531570325967-4b8fcb7e120d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     duration: "7 Days",
-    location: "Tanzania",
+    location: "Bwindi Impenetrable National Park",
     groupSize: "Max 8",
     startingPrice: 2899,
     season: "Jun-Oct",
   },
   {
     id: 2,
-    title: "Okavango Delta Experience",
-    description: "Explore the pristine waterways of the Okavango Delta, a UNESCO World Heritage site.",
+    title: "Murchison Falls Safari",
+    description: "Experience Uganda's largest national park with thrilling game drives and a boat cruise to the falls.",
     image: "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&q=80&w=800",
     duration: "5 Days",
-    location: "Botswana",
+    location: "Murchison Falls National Park",
     groupSize: "Max 6",
     startingPrice: 3299,
     season: "Apr-Sep",
   },
   {
     id: 3,
-    title: "Maasai Mara Adventure",
-    description: "Encounter the Big Five and experience authentic Maasai culture in Kenya's premier reserve.",
+    title: "Queen Elizabeth National",
+    description: "Enjoy a classic African safari with tree-climbing lions and boat cruises on the Kazinga Channel.",
     image: "https://images.unsplash.com/photo-1523805009345-7448845a9e53?auto=format&fit=crop&q=80&w=800",
     duration: "6 Days",
-    location: "Kenya",
+    location: "Queen Elizabeth National Park",
     groupSize: "Max 6",
     startingPrice: 2499,
     season: "Jul-Oct",
@@ -88,6 +89,7 @@ export function FeaturedSafaris() {
             on Africa's breathtaking landscapes and wildlife.
           </p>
         </div>
+
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {safariExperiences.map((safari, index) => (
