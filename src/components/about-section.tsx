@@ -1,13 +1,12 @@
 "use client";
 
 import { useEffect, useState, useRef } from "react";
+import { useInView } from "react-intersection-observer";
 import Image from "next/image";
-import { motion, useInView } from "framer-motion";
 
 export function AboutSection() {
   const [isLoaded, setIsLoaded] = useState(false);
-  const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef, { once: true });
+  const { ref: sectionRef, inView: isInView } = useInView({ triggerOnce: true });
 
   useEffect(() => {
     setIsLoaded(true);
