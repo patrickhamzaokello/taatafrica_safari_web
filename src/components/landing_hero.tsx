@@ -2,20 +2,26 @@
 
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { ChevronDown } from "lucide-react"
+import { ChevronDown, Menu, X } from "lucide-react"
 import { useEffect, useState } from "react"
 
 export function HeroSection() {
   const [isLoaded, setIsLoaded] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
 
   useEffect(() => {
     // Trigger animations after component mounts
     setIsLoaded(true)
 
-    // Handle scroll for parallax effect
+    // Handle scroll for parallax effect and navbar transparency
     const handleScroll = () => {
       const scrollPosition = window.scrollY
       const heroImage = document.querySelector(".hero-image") as HTMLElement
+      
+      // Update navbar transparency based on scroll position
+      setIsScrolled(scrollPosition > 50)
+      
       if (heroImage) {
         // Subtle parallax effect
         heroImage.style.transform = `translateY(${scrollPosition * 0.15}px)`
@@ -34,8 +40,71 @@ export function HeroSection() {
     }
   }
 
+  // Toggle mobile menu
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen)
+  }
+
   return (
     <div className="relative h-screen w-full overflow-hidden bg-stone-950">
+      {/* Navigation Header */}
+      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-stone-950/90 backdrop-blur-sm' : 'bg-transparent'}`}>
+        <div className="max-w-7xl mx-auto px-6 sm:px-10">
+          <div className="flex items-center justify-between h-20 border-b border-amber-800/20">
+            {/* Logo */}
+            <div className={`transition-opacity duration-700 ${isLoaded ? "opacity-100" : "opacity-0"}`}>
+              <div className="flex items-center">
+                <span className="text-white font-serif text-xl tracking-wider">TATA AFRICA <span className="text-amber-500">SAFARIS</span></span>
+              </div>
+            </div>
+
+            {/* Desktop Navigation */}
+            <nav className="hidden md:flex">
+              <ul className="flex space-x-8">
+                {['Destinations', 'Experiences', 'Wildlife', 'Luxury Camps', 'About', 'Contact'].map((item, index) => (
+                  <li key={index} className={`transition-all duration-700 delay-${index * 100} ${isLoaded ? "opacity-100" : "opacity-0 translate-y-2"}`}>
+                    <a href="#" className="text-stone-300 hover:text-amber-500 text-sm uppercase tracking-widest transition-colors duration-300">
+                      {item}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+
+            {/* Mobile Menu Button */}
+            <button 
+              className="md:hidden text-stone-300 hover:text-amber-500 transition-colors duration-300"
+              onClick={toggleMenu}
+              aria-label="Toggle menu"
+            >
+              {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile Menu */}
+        <div className={`md:hidden fixed inset-0 bg-stone-950/95 backdrop-blur-sm z-40 transition-all duration-500 ${isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
+          <div className="flex flex-col items-center justify-center h-full">
+            <ul className="flex flex-col items-center space-y-6">
+              {['Destinations', 'Experiences', 'Wildlife', 'Luxury Camps', 'About', 'Contact'].map((item, index) => (
+                <li key={index}>
+                  <a 
+                    href="#" 
+                    className="text-stone-300 hover:text-amber-500 text-lg uppercase tracking-widest transition-colors duration-300"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      toggleMenu();
+                    }}
+                  >
+                    {item}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </header>
+
       {/* Letterboxed Hero Image with Luxury Treatment */}
       <div className="absolute inset-0 md:inset-y-[10%] md:h-[80%] overflow-hidden">
         <div className="hero-image absolute inset-0 transition-transform duration-700 ease-out scale-[1.03]">
@@ -105,4 +174,3 @@ export function HeroSection() {
     </div>
   )
 }
-
