@@ -14,7 +14,7 @@ export function SafariPackages(){
                         title: "Wildlife Explorer",
                         price: "5,900",
                         image:
-                          "https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&q=80",
+                          "https://images.unsplash.com/photo-1557446125-1407c9264ff0?auto=format&fit=crop&q=80",
                         features: [
                           "7 Days Big Five Safari",
                           "Luxury Lodge Stay",
@@ -26,7 +26,7 @@ export function SafariPackages(){
                         title: "Cultural Immersion",
                         price: "8,500",
                         image:
-                          "https://images.unsplash.com/photo-1523805009345-7448845a9e53?auto=format&fit=crop&q=80",
+                          "https://plus.unsplash.com/premium_photo-1667688835293-4bbff8107069?auto=format&fit=crop&q=80",
                         features: [
                           "10 Days Combined Tour",
                           "Maasai Village Stay",
@@ -38,7 +38,7 @@ export function SafariPackages(){
                         title: "Ultimate Africa",
                         price: "12,900",
                         image:
-                          "https://images.unsplash.com/photo-1549366021-9f761d450615?auto=format&fit=crop&q=80",
+                          "https://images.unsplash.com/photo-1536328105599-b20961f76903?auto=format&fit=crop&q=80",
                         features: [
                           "14 Days Exclusive Tour",
                           "Private Air Transfers",

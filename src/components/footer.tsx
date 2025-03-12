@@ -27,12 +27,9 @@ export function Footer() {
           <div className="space-y-4">
             <h4 className="text-lg font-medium">Quick Links</h4>
             <ul className="space-y-2">
+              
               {[
-                "Destinations",
-                "Safari Packages",
-                "Wildlife Gallery",
-                "Travel Tips",
-                "About Us",
+                'Featured', 'Experiences', 'Testimonies', 'Charity', 'About', 'Contact'
               ].map((item) => (
                 <li key={item}>
                   <a
@@ -50,22 +47,22 @@ export function Footer() {
           <div className="space-y-4">
             <h4 className="text-lg font-medium">Contact Us</h4>
             <address className="not-italic text-gray-300 space-y-2">
-              <p>123 Safari Road, Nairobi</p>
-              <p>Kenya, East Africa</p>
+              <p>Entebbe</p>
+              <p>Uganda, East Africa</p>
               <p className="pt-2">
                 <a
                   href="tel:+254123456789"
                   className="hover:text-amber-400 transition-colors"
                 >
-                  +254 123 456 789
+                  +256 (0) 766 274 001
                 </a>
               </p>
               <p>
                 <a
-                  href="mailto:info@africansafari.com"
+                  href="mailto:info@tataafricasafaris.com"
                   className="hover:text-amber-400 transition-colors"
                 >
-                  info@africansafari.com
+                  info@tataafricasafaris.com
                 </a>
               </p>
             </address>
@@ -94,34 +91,34 @@ export function Footer() {
         <div className="border-t border-stone-800 pt-10 pb-6">
           <div className="flex flex-col items-center justify-center gap-6">
             <h2 className="text-2xl md:text-3xl font-serif text-center">
-              <span className="text-amber-500">#</span>AfricanSafariAdventures
+              <span className="text-amber-500">#</span>tataafricasafaris
             </h2>
             <div className="flex flex-wrap justify-center gap-6">
               {[
                 {
                   icon: <FaYoutube size={22} />,
                   label: "YouTube",
-                  href: "https://www.youtube.com",
+                  href: "https://www.youtube.com/tataafricasafaris",
                 },
                 {
                   icon: <FaTiktok size={22} />,
                   label: "TikTok",
-                  href: "https://www.tiktok.com",
+                  href: "https://www.tiktok.com/tataafricasafaris",
                 },
                 {
                   icon: <FaInstagram size={22} />,
                   label: "Instagram",
-                  href: "https://www.instagram.com",
+                  href: "https://www.instagram.com/tataafricasafaris",
                 },
                 {
                   icon: <FaMeta size={22} />,
                   label: "Facebook",
-                  href: "https://www.facebook.com",
+                  href: "https://www.facebook.com/tataafricasafaris",
                 },
                 {
                   icon: <FaXTwitter size={22} />,
                   label: "Twitter",
-                  href: "https://www.twitter.com",
+                  href: "https://www.twitter.com/tataafricasafaris",
                 },
               ].map((social) => (
                 <a
@@ -142,7 +139,7 @@ export function Footer() {
         {/* Copyright */}
         <div className="text-center pt-6 border-t border-stone-800">
           <p className="text-gray-400 text-sm">
-            &copy; {new Date().getFullYear()} African Safari Adventures. All
+            &copy; {new Date().getFullYear()} Tata Africa Safaris. All
             rights reserved.
           </p>
         </div>

@@ -61,7 +61,7 @@ export function HeroSection() {
             {/* Desktop Navigation */}
             <nav className="hidden md:flex">
               <ul className="flex space-x-8">
-                {['Destinations', 'Experiences', 'Wildlife', 'Luxury Camps', 'About', 'Contact'].map((item, index) => (
+                {['Featured', 'Experiences', 'Testimonies', 'Charity', 'About', 'Contact'].map((item, index) => (
                   <li key={index} className={`transition-all duration-700 delay-${index * 100} ${isLoaded ? "opacity-100" : "opacity-0 translate-y-2"}`}>
                     <a href="#" className="text-stone-300 hover:text-amber-500 text-sm uppercase tracking-widest transition-colors duration-300">
                       {item}

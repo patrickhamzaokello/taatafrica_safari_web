@@ -12,22 +12,22 @@ export function BlogSection() {
      <div className="grid md:grid-cols-3 gap-8">
        {[
          {
-           title: "Top 5 Safari Destinations in Africa",
+           title: "Top 5 Safari Destinations in Uganda",
            image:
-             "https://images.unsplash.com/photo-1503614472-8c93d56e92ce?auto=format&fit=crop&q=80",
-           desc: "Discover the best places to witness Africa's wildlife.",
+             "https://images.unsplash.com/photo-1553521306-9728831d2983?auto=format&fit=crop&q=80",
+           desc: "Discover the best places to witness Uganda's wildlife.",
          },
          {
            title: "How to Prepare for Your First Safari",
            image:
-             "https://images.unsplash.com/photo-1523805009345-7448845a9e53?auto=format&fit=crop&q=80",
+             "https://images.unsplash.com/photo-1535530124635-c5487dfad499?auto=format&fit=crop&q=80",
            desc: "Essential tips for a seamless safari experience.",
          },
          {
-           title: "The Maasai Culture: A Rich Heritage",
+           title: "The Ugandan Culture: A Rich Heritage",
            image:
-             "https://images.unsplash.com/photo-1523805009345-7448845a9e53?auto=format&fit=crop&q=80",
-           desc: "Learn about the traditions of the Maasai people.",
+             "https://images.unsplash.com/photo-1614528767034-70de9fe166e0?auto=format&fit=crop&q=80",
+           desc: "Learn about the traditions of the Ugandan people.",
          },
        ].map((post, index) => (
          <div

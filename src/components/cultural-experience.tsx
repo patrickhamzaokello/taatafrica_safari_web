@@ -18,11 +18,11 @@ export function CulturalExperience() {
                 Connect with African Traditions
               </h2>
               <p className="text-gray-600 mb-6 leading-relaxed">
-                Immerse yourself in the rich tapestry of African culture. Our
+                Immerse yourself in the rich tapestry of Ugandan culture. Our
                 journeys go beyond wildlife viewing to offer authentic
                 interactions with local communities. Experience traditional
                 ceremonies, learn ancient customs, and share moments with the
-                Maasai people who have called these lands home for generations.
+                Uganda people who have called these lands home for generations.
               </p>
               <div className="grid grid-cols-2 gap-6">
                 <div className="flex items-center gap-3 hover:text-amber-600 transition-colors">
@@ -45,8 +45,8 @@ export function CulturalExperience() {
             </div>
             <div className="relative animate-slide-in-right">
               <img
-                src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?auto=format&fit=crop&q=80"
-                alt="Maasai Culture"
+                src="https://images.unsplash.com/photo-1537706388178-55c10865b82e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Ugandan Culture"
                 className="rounded-lg shadow-xl hover:scale-105 transition-transform duration-500"
               />
               <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-lg shadow-lg">

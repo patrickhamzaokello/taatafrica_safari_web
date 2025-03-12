@@ -14,7 +14,7 @@ const experiences = [
   {
     icon: Heart,
     title: "Cultural Immersion",
-    desc: "Engage with Maasai warriors, learn traditional crafts, and participate in authentic cultural ceremonies.",
+    desc: "Engage with local communities, learn traditional crafts, and participate in authentic cultural ceremonies.",
     color: "bg-stone-50 border-stone-200",
     iconColor: "text-stone-700",
   },

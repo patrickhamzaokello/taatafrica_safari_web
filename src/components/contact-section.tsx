@@ -23,15 +23,15 @@ export function ContactSection() {
               <div className="space-y-4">
                 <div className="flex items-center gap-4">
                   <Phone className="text-amber-600" />
-                  <span>+254 (0) 123-4567</span>
+                  <span>+256 (0) 766 274 001</span>
                 </div>
                 <div className="flex items-center gap-4">
                   <Mail className="text-amber-600" />
-                  <span>safari@africanluxury.com</span>
+                  <span>info@tataafricasafaris.com</span>
                 </div>
                 <div className="flex items-center gap-4">
                   <MapPin className="text-amber-600" />
-                  <span>Karen Road, Nairobi, Kenya</span>
+                  <span>Kampala, Uganda</span>
                 </div>
               </div>
             </div>

@@ -6,7 +6,9 @@ import Image from "next/image";
 
 export function AboutSection() {
   const [isLoaded, setIsLoaded] = useState(false);
-  const { ref: sectionRef, inView: isInView } = useInView({ triggerOnce: true });
+  const { ref: sectionRef, inView: isInView } = useInView({
+    triggerOnce: true,
+  });
 
   useEffect(() => {
     setIsLoaded(true);
@@ -59,7 +61,8 @@ export function AboutSection() {
                       />
                     </div>
                     <h3 className="font-serif text-3xl text-white tracking-wider">
-                      TATA <span className="text-amber-500">AFRICA SAFARIS</span>
+                      TATA{" "}
+                      <span className="text-amber-500">AFRICA SAFARIS</span>
                     </h3>
                     <p className="text-amber-600/70 text-xs uppercase tracking-widest mt-2">
                       Est. 2024
@@ -98,7 +101,7 @@ export function AboutSection() {
             </h2>
 
             <p className="text-stone-300 leading-relaxed">
-            Tata Africa Safaris was founded with a vision to showcase the
+              Tata Africa Safaris was founded with a vision to showcase the
               breathtaking beauty and rich cultural heritage of Uganda through
               immersive, sustainable luxury experiences. Our intimate knowledge
               of the region allows us to create journeys that reveal the
@@ -143,14 +146,14 @@ export function AboutSection() {
             {/* Signature */}
             <div className="pt-4">
               <Image
-                src="/signature.png"
+                src="https://images.unsplash.com/photo-1614528767034-70de9fe166e0?auto=format&fit=crop&q=80"
                 alt="Director's Signature"
                 width={160}
-                height={60}
-                className="object-contain opacity-70"
+                height={160} // Set height equal to width for a perfect circle
+                className="object-cover opacity-70 rounded-full" // Use rounded-full to make it a circle
               />
               <p className="text-stone-400 text-sm mt-2">
-               Hannifah Namayega, Founder
+                Hannifah Namayega, Founder
               </p>
             </div>
           </div>

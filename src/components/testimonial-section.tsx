@@ -19,7 +19,7 @@ export function TestimonialsSection () {
                       {
                         name: "Emma Johnson",
                         review:
-                          "The cultural immersion was incredible. We learned so much about Maasai traditions and felt truly welcomed.",
+                          "The cultural immersion was incredible. We learned so much about Ugandan traditions and felt truly welcomed.",
                         location: "London, UK",
                       },
                       {
