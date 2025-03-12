@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { Playfair_Display, Tangerine } from "next/font/google";
+import { Playfair_Display, Dancing_Script, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -20,9 +20,16 @@ const playfair = Playfair_Display({
 });
 
 // Add elegant cursive font
-const tangerine = Tangerine({
-  variable: "--font-tangerine",
+const dancingScript = Dancing_Script({
+  variable: "--font-dancing-script",
   weight: ["400", "700"],
+  subsets: ["latin"],
+});
+
+// Add Cormorant Garamond for body text
+const cormorant = Cormorant_Garamond({
+  variable: "--font-cormorant",
+  weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
 });
 
@@ -39,7 +46,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} ${tangerine.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} ${dancingScript.variable} ${cormorant.variable} antialiased`}
       >
         {children}
       </body>
