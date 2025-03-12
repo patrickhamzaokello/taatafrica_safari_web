@@ -54,7 +54,7 @@ body {
 
 /* Define font styles */
 .cursive {
-  font-family: var(--font-cursive), cursive;
+  font-family: 'Dancing Script', cursive;
   font-weight: 700;
   letter-spacing: 0.03em;
 }

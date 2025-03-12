@@ -11,12 +11,11 @@ export function WhyChooseUsSection() {
         <section className="py-20 px-4 md:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <p className="cursive text-amber-600 text-2xl mb-2">
-              Why Choose Us
+          <p className="cursive text-amber-600 text-xl mb-2">Perfect Match For You</p>
+          <h2 className="text-4xl font-serif mb-6 text-stone-900">Why Choose US</h2>
+            <p className="max-w-2xl mx-auto text-stone-600">
+            Exclusive Experiences, Unmatched Expertise, and a Commitment to Excellence – This is Tata Africa Safaris.
             </p>
-            <h2 className="text-4xl font-serif mb-8">
-              Your Trusted Safari Partner
-            </h2>
           </div>
           <div className="grid md:grid-cols-4 gap-8">
             {[
