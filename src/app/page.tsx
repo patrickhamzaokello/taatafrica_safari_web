@@ -18,6 +18,9 @@ import Link from "next/link";
 import { Footer } from "@/components/footer";
 import { FAQSection } from "@/components/faq_section";
 import { HeroSection } from "@/components/landing_hero";
+import { FeaturedSafaris } from "@/components/featured_safari"
+import { ExperienceSection } from "@/components/experience-section";
+import { CharitySection } from "@/components/charity-section";
 
 export default function Home() {
   return (
@@ -25,52 +28,12 @@ export default function Home() {
       {/* Hero Section */}
       <HeroSection />
 
-      {/* Cultural Highlights */}
-      <section className="py-16 bg-stone-50">
-        <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <div className="text-center mb-12">
-            <p className="cursive text-amber-600 text-2xl mb-2 animate-fade-in-up">
-              Experience Africa
-            </p>
-            <h2 className="text-4xl font-serif mb-4">
-              Where Wildlife Meets Culture
-            </h2>
-          </div>
-          <div className="grid md:grid-cols-4 gap-8">
-            {[
-              {
-                icon: Star,
-                title: "Big Five Sightings",
-                desc: "Witness Africa's most magnificent wildlife",
-              },
-              {
-                icon: Heart,
-                title: "Cultural Immersion",
-                desc: "Connect with local Maasai communities",
-              },
-              {
-                icon: Users,
-                title: "Small Groups",
-                desc: "Intimate safari experiences",
-              },
-              {
-                icon: Map,
-                title: "Remote Locations",
-                desc: "Access to pristine wilderness",
-              },
-            ].map((item, index) => (
-              <div
-                key={index}
-                className="text-center p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition-all hover:-translate-y-1"
-              >
-                <item.icon className="w-12 h-12 text-amber-600 mx-auto mb-4" />
-                <h3 className="text-xl font-serif mb-2">{item.title}</h3>
-                <p className="text-gray-600">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <FeaturedSafaris />
+
+      <ExperienceSection />
+
+
+      <CharitySection />
 
       {/* Wildlife Gallery */}
       <section className="py-20 px-4 md:px-8">

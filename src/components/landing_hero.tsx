@@ -3,55 +3,102 @@
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { ChevronDown } from "lucide-react"
+import { useEffect, useState } from "react"
 
 export function HeroSection() {
+  const [isLoaded, setIsLoaded] = useState(false)
+
+  useEffect(() => {
+    // Trigger animations after component mounts
+    setIsLoaded(true)
+
+    // Handle scroll for parallax effect
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY
+      const heroImage = document.querySelector(".hero-image") as HTMLElement
+      if (heroImage) {
+        // Subtle parallax effect
+        heroImage.style.transform = `translateY(${scrollPosition * 0.15}px)`
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
   // Smooth scroll function
   const scrollToContent = () => {
-    window.scrollTo({
-      top: window.innerHeight,
-      behavior: "smooth",
-    })
+    const nextSection = document.getElementById("featured-safaris") || document.querySelector("section:nth-of-type(2)")
+    if (nextSection) {
+      nextSection.scrollIntoView({ behavior: "smooth" })
+    }
   }
 
   return (
-    <div className="relative h-screen w-full overflow-hidden">
-      {/* Background Image with Gradient Overlay */}
-      <div className="absolute inset-0">
-        <Image
-          src="https://images.unsplash.com/photo-1549366021-9f761d450615?auto=format&fit=crop&q=80&w=1920"
-          alt="African Safari"
-          fill
-          className="object-cover object-center"
-          priority
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-stone-900/70 via-stone-900/50 to-stone-900/70"></div>
+    <div className="relative h-screen w-full overflow-hidden bg-stone-950">
+      {/* Letterboxed Hero Image with Luxury Treatment */}
+      <div className="absolute inset-0 md:inset-y-[10%] md:h-[80%] overflow-hidden">
+        <div className="hero-image absolute inset-0 transition-transform duration-700 ease-out scale-[1.03]">
+          <Image
+            src="https://images.unsplash.com/photo-1531570325967-4b8fcb7e120d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="African Safari"
+            fill
+            className="object-cover object-center opacity-80"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-stone-950/80 via-transparent to-stone-950/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/20 to-stone-950/60"></div>
+        </div>
       </div>
 
-      {/* Hero Content */}
-      <div className="relative h-full flex flex-col items-center justify-center px-4 sm:px-6">
-        <div className="text-center max-w-4xl mx-auto space-y-6">
-          <p className="italic text-amber-400 text-xl sm:text-2xl hero-fade-in">Discover Africa</p>
+      {/* Horizontal Lines - Luxury Detail */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-amber-800/30"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-amber-800/30"></div>
 
-          <h1 className="text-5xl sm:text-6xl md:text-7xl font-serif text-white font-light tracking-wide hero-fade-in hero-delay-1">
-            Wild Beauty <span className="text-amber-400">&</span> Rich Culture
+      {/* Hero Content - Minimalist Luxury Approach */}
+      <div className="relative h-full flex flex-col items-center justify-center px-6 sm:px-10">
+        <div className="text-center max-w-4xl mx-auto space-y-8">
+          {/* Subtle Divider */}
+          <div
+            className={`flex items-center justify-center mb-4 transition-all duration-1000 ease-out ${isLoaded ? "opacity-100" : "opacity-0 translate-y-6"}`}
+          >
+            <div className="h-px w-12 bg-amber-600"></div>
+            <p className="mx-4 text-amber-600 uppercase tracking-widest text-xs font-medium">
+              Exclusive Safari Experiences
+            </p>
+            <div className="h-px w-12 bg-amber-600"></div>
+          </div>
+
+          <h1
+            className={`text-4xl sm:text-5xl md:text-6xl font-serif text-white font-light tracking-wide transition-all duration-1000 delay-300 ease-out ${isLoaded ? "opacity-100" : "opacity-0 translate-y-6"}`}
+          >
+            <span className="block mb-2">Discover the Untamed</span>
+            <span className="text-amber-400">Elegance of Uganda</span>
           </h1>
 
-          <p className="text-lg sm:text-xl text-gray-200 max-w-2xl mx-auto hero-fade-in hero-delay-2">
-            Immerse yourself in authentic African safaris and cultural experiences
+          <p
+            className={`text-base sm:text-lg text-stone-300 max-w-xl mx-auto transition-all duration-1000 delay-500 ease-out ${isLoaded ? "opacity-100" : "opacity-0 translate-y-6"}`}
+          >
+            Curated safari journeys that blend luxury with authentic wildlife encounters and cultural immersion
           </p>
 
-          <div className="pt-4 hero-fade-in hero-delay-3">
-            <Button className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-6 text-lg">
-              Begin Your Journey
+          <div
+            className={`pt-6 transition-all duration-1000 delay-700 ease-out ${isLoaded ? "opacity-100" : "opacity-0 translate-y-6"}`}
+          >
+            <Button className="bg-transparent hover:bg-amber-600 text-white border border-amber-600 px-10 py-6 rounded-none text-sm uppercase tracking-widest transition-all duration-300 hover:border-transparent">
+              Curate Your Journey
             </Button>
           </div>
         </div>
 
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 cursor-pointer" onClick={scrollToContent}>
-          <div className="flex flex-col items-center space-y-2">
-            <span className="text-white text-sm">Explore</span>
-            <ChevronDown className="text-amber-400 animate-bounce" size={24} />
+        {/* Minimal Scroll Indicator */}
+        <div
+          className={`absolute bottom-12 left-1/2 transform -translate-x-1/2 cursor-pointer transition-all duration-1000 delay-1000 ease-out ${isLoaded ? "opacity-100" : "opacity-0"}`}
+          onClick={scrollToContent}
+        >
+          <div className="flex flex-col items-center space-y-3">
+            <span className="text-amber-500 text-xs uppercase tracking-widest">Explore</span>
+            <ChevronDown className="text-amber-500 animate-pulse" size={18} />
           </div>
         </div>
       </div>
