@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 import { useRouter, usePathname } from 'next/navigation'
 import Link from 'next/link'
+import { checkAuth, logoutAdmin } from '@/app/actions/admin'
 
 export default function AdminLayout({
   children,
@@ -14,10 +15,10 @@ export default function AdminLayout({
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    const checkAuth = async () => {
+    const checkAuthStatus = async () => {
       try {
-        const response = await fetch('/api/admin/check-auth')
-        if (!response.ok && pathname !== '/tataadmin/login') {
+        const { success } = await checkAuth()
+        if (!success && pathname !== '/tataadmin/login') {
           router.push('/tataadmin/login')
         }
       } catch (error) {
@@ -27,8 +28,13 @@ export default function AdminLayout({
       }
     }
 
-    checkAuth()
+    checkAuthStatus()
   }, [pathname, router])
+
+  const handleLogout = async () => {
+    await logoutAdmin()
+    router.push('/tataadmin/login')
+  }
 
   if (isLoading) {
     return <div>Loading...</div>
@@ -71,10 +77,7 @@ export default function AdminLayout({
               Newsletter
             </Link>
             <button
-              onClick={async () => {
-                await fetch('/api/admin/logout', { method: 'POST' })
-                router.push('/tataadmin/login')
-              }}
+              onClick={handleLogout}
               className="hover:text-amber-400"
             >
               Logout

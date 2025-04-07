@@ -1,39 +1,26 @@
 'use client'
 
-import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
+import { loginAdmin } from '@/app/actions/admin'
+import { useActionState } from "react"
+import { useEffect } from 'react'
+
+const initialState = {
+  success: false,
+  error: null,
+}
 
 export default function AdminLogin() {
-  const [username, setUsername] = useState('')
-  const [password, setPassword] = useState('')
-  const [error, setError] = useState('')
   const router = useRouter()
+  const [state, formAction] = useActionState(loginAdmin, initialState)
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setError('')
-
-    try {
-      const response = await fetch('/api/admin/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ username, password }),
-      })
-
-      if (response.ok) {
-        router.push('/tataadmin/dashboard')
-      } else {
-        const data = await response.json()
-        setError(data.error || 'Invalid credentials')
-      }
-    } catch (err) {
-      setError('An error occurred. Please try again.')
+  useEffect(() => {
+    if (state.success) {
+      router.push('/tataadmin/dashboard')
     }
-  }
+  }, [state.success, router])
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-stone-50">
@@ -43,32 +30,30 @@ export default function AdminLogin() {
             Admin Login
           </h2>
         </div>
-        <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
+        <form action={formAction} className="mt-8 space-y-6">
           <div className="rounded-md shadow-sm space-y-4">
             <div>
               <Input
                 type="text"
+                name="username"
                 required
                 placeholder="Username"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
                 className="w-full"
               />
             </div>
             <div>
               <Input
                 type="password"
+                name="password"
                 required
                 placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
                 className="w-full"
               />
             </div>
           </div>
 
-          {error && (
-            <div className="text-red-500 text-sm text-center">{error}</div>
+          {state.error && (
+            <div className="text-red-500 text-sm text-center">{state.error}</div>
           )}
 
           <div>

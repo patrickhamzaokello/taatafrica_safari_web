@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { prisma } from '@/lib/prisma'
+import { getAdminStats } from '@/app/actions/admin'
 
 type DashboardStats = {
   totalContacts: number
@@ -13,15 +13,19 @@ type DashboardStats = {
 export default function Dashboard() {
   const [stats, setStats] = useState<DashboardStats | null>(null)
   const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
     const fetchStats = async () => {
       try {
-        const response = await fetch('/api/admin/stats')
-        const data = await response.json()
-        setStats(data)
+        const result = await getAdminStats()
+        if (result.success && result.data) {
+          setStats(result.data)
+        } else {
+          setError(result.error || 'Failed to fetch stats')
+        }
       } catch (error) {
-        console.error('Error fetching stats:', error)
+        setError('An error occurred while fetching stats')
       } finally {
         setLoading(false)
       }
@@ -32,6 +36,10 @@ export default function Dashboard() {
 
   if (loading) {
     return <div>Loading...</div>
+  }
+
+  if (error) {
+    return <div className="text-red-500">{error}</div>
   }
 
   return (
