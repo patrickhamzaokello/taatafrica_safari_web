@@ -1,6 +1,6 @@
-import { PrismaClient } from '@prisma/client';
-import path from 'path';
-import fs from 'fs';
+const { PrismaClient } = require('@prisma/client');
+const path = require('path');
+const fs = require('fs');
 
 const prisma = new PrismaClient();
 
@@ -23,4 +23,4 @@ main()
   })
   .finally(async () => {
     await prisma.$disconnect();
-  });
+  }); 
