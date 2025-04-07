@@ -1,11 +1,22 @@
+'use client'
+
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { FaYoutube } from "react-icons/fa";
 import { FaTiktok, FaXTwitter } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa6";
 import { FaMeta } from "react-icons/fa6";
+import { subscribeToNewsletter } from "@/app/actions/newsletter";
+import { useActionState } from "react";
+
+const initialState = {
+  success: false,
+  error: null,
+};
 
 export function Footer() {
+  const [state, formAction] = useActionState(subscribeToNewsletter, initialState);
+
   return (
     <footer className="bg-stone-900 text-white py-16">
       <div className="container mx-auto px-4 md:px-6">
@@ -27,7 +38,6 @@ export function Footer() {
           <div className="space-y-4">
             <h4 className="text-lg font-medium">Quick Links</h4>
             <ul className="space-y-2">
-              
               {[
                 'Featured', 'Experiences', 'Testimonies', 'Charity', 'About', 'Contact'
               ].map((item) => (
@@ -74,16 +84,27 @@ export function Footer() {
             <p className="text-gray-300 text-sm">
               Subscribe for exclusive offers and travel tips.
             </p>
-            <div className="space-y-2">
+            <form action={formAction} className="space-y-2">
               <Input
                 type="email"
+                name="email"
                 placeholder="Your email address"
+                required
                 className="bg-stone-800 border-stone-700 text-white placeholder:text-gray-400 focus-visible:ring-amber-500"
               />
-              <Button className="w-full bg-amber-600 hover:bg-amber-700 text-white">
+              {state.error && (
+                <p className="text-red-500 text-sm">{state.error}</p>
+              )}
+              {state.success && (
+                <p className="text-green-500 text-sm">Successfully subscribed!</p>
+              )}
+              <Button 
+                type="submit"
+                className="w-full bg-amber-600 hover:bg-amber-700 text-white"
+              >
                 Subscribe
               </Button>
-            </div>
+            </form>
           </div>
         </div>
 
