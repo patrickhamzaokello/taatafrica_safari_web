@@ -6,7 +6,7 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "mysql"
   url      = env("DATABASE_URL")
 }
 
@@ -45,7 +45,7 @@ model SafariPackage {
   location       String
   durationDays   Int
   pricePerPerson Float
-  imagePaths     Json // Stores an array of image URLs
+  imagePaths     String   // Changed from Json to String
   maxGroupSize   Int
   season         String
   createdAt      DateTime @default(now())
