@@ -80,6 +80,15 @@ async function main() {
   });
 
   console.log("✅ Safari packages seeded successfully!");
+
+  const admin = await prisma.adminUser.create({
+    data: {
+      username: 'admin',
+      password: 'admin123', // Change this to a secure password
+    },
+  })
+
+  console.log("admin  user created successfully")
 }
 
 main()
