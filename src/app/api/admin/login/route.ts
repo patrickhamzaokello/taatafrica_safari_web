@@ -22,7 +22,7 @@ export async function POST(request: Request) {
       { userId: admin.id, username: admin.username },
       process.env.JWT_SECRET || 'your-secret-key',
       { expiresIn: '1d' }
-    )
+    );
 
     (await cookies()).set('admin-token', token, {
       httpOnly: true,
