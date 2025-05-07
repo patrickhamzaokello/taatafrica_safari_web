@@ -89,7 +89,7 @@ export function ExperienceSection() {
         <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-20 h-1 bg-amber-600"></div>
 
         <div className="text-center mb-16">
-          <p className="italic text-amber-600 text-xl mb-3 section-title opacity-0">Experience Africa</p>
+          <p className="italic text-amber-600 text-xl mb-3 section-title opacity-0">Experience Uganda</p>
           <h2 className="text-4xl font-serif mb-6 section-title opacity-0">Where Wildlife Meets Culture</h2>
           <p className="max-w-2xl mx-auto text-stone-600 section-title opacity-0">
             Our safaris offer more than just wildlife viewing. Immerse yourself in the rich tapestry of African

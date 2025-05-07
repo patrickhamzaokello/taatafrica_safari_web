@@ -12,7 +12,6 @@ export function SafariPackages(){
                     {[
                       {
                         title: "Wildlife Explorer",
-                        price: "5,900",
                         image:
                           "https://images.unsplash.com/photo-1557446125-1407c9264ff0?auto=format&fit=crop&q=80",
                         features: [
@@ -24,7 +23,6 @@ export function SafariPackages(){
                       },
                       {
                         title: "Cultural Immersion",
-                        price: "8,500",
                         image:
                           "https://plus.unsplash.com/premium_photo-1667688835293-4bbff8107069?auto=format&fit=crop&q=80",
                         features: [
@@ -36,7 +34,6 @@ export function SafariPackages(){
                       },
                       {
                         title: "Ultimate Africa",
-                        price: "12,900",
                         image:
                           "https://images.unsplash.com/photo-1536328105599-b20961f76903?auto=format&fit=crop&q=80",
                         features: [
@@ -58,7 +55,6 @@ export function SafariPackages(){
                         />
                         <div className="p-6">
                           <h3 className="text-2xl font-serif mb-4">{pkg.title}</h3>
-                          <p className="text-3xl text-amber-600 mb-6">${pkg.price}</p>
                           <ul className="space-y-3">
                             {pkg.features.map((feature, i) => (
                               <li key={i} className="flex items-center gap-2">

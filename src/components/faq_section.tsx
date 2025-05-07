@@ -4,27 +4,27 @@ const faqs = [
   {
     question: "What is the best time to go on a safari?",
     answer:
-      "The dry season (June to October) is ideal for wildlife viewing as animals gather around water sources. The wet season (November to May) offers lush landscapes and newborn wildlife with fewer tourists.",
+      "Peak Safari Seasons in Uganda: • June to September (main dry season): Best for game drives, gorilla trekking, and chimpanzee tracking — wildlife gathers around water sources, and trails are dry and accessible. • December to February (short dry season): Also a good time for safaris and primate trekking, with fewer crowds than the mid-year months. Why Dry Seasons Are Ideal: • Easier wildlife spotting as animals gather around rivers and watering holes. • Roads and trekking trails are more accessible and less muddy. • Comfortable temperatures with lower humidity. Rainy Seasons to Avoid (if you prefer dry conditions): • March to May and October to November — lush and beautiful, but heavy rains can disrupt travel and make trekking slippery. That said, Uganda is a year-round destination — especially for birdwatching and lush landscape lovers",
   },
   {
     question: "What should I pack for a safari?",
     answer:
-      "Essential items include neutral-colored clothing, lightweight long-sleeved shirts and pants, a wide-brimmed hat, sturdy walking shoes, sunscreen, insect repellent, binoculars, and a camera with extra batteries.",
+      "Clothing (Light & Neutral Colors): • Lightweight, breathable shirts (long & short sleeve) • Zip-off trousers or safari pants • A warm fleece or jacket (it gets chilly in the mornings/evenings) • A wide-brimmed hat or cap • A lightweight rain jacket (especially for gorilla trekking or in rainy seasons) • Comfortable walking shoes or boots • Flip-flops or sandals for camp/lodge • Swimsuit (many lodges have pools). Safari Essentials: • Sunglasses with UV protection • Sunscreen & lip balm (high SPF) • Insect repellent (DEET-based for mosquitos) • Refillable water bottle • Binoculars (for game viewing) • Flashlight or headlamp • Daypack or small backpack • Travel adaptor (Uganda uses UK-style plugs). Health & Personal Items: • Prescription medications • Basic first aid kit • Wet wipes and hand sanitizer • Personal toiletries (some lodges provide basics) • Malaria prophylaxis (ask your doctor before travel). For Gorilla/Chimp Trekking: • Gardening gloves (for gripping plants) • Gaiters or long socks (for tucking into trousers) • Sturdy hiking shoes • Waterproof backpack cover. Documents: • Passport & visa • Travel insurance info • Copies of travel documents (digital & paper) • Vaccination certificate (Yellow Fever is required).",
   },
   {
     question: "Are safaris safe for children?",
     answer:
-      "Yes, we offer family-friendly safaris with experienced guides trained to work with children. These safaris feature age-appropriate activities, flexible schedules, and accommodations that cater to families.",
+      "Yes — safaris are safe and unforgettable for children when planned right. At Tata Africa Safaris, we design family-friendly trips with expert guides, child-appropriate lodges, and flexible schedules. While activities like gorilla trekking have age limits (15+), game drives and nature walks can be tailored for all ages. Safety, comfort, and fun come first — for every member of your family.",
   },
   {
     question: "How close will I get to the animals?",
     answer:
-      "Our experienced guides will bring you close enough to observe wildlife comfortably and safely, typically within 10-30 meters of most animals while maintaining a respectful distance that doesn't disturb their natural behavior.",
+      "Very close — but always safe. On game drives, you’ll often see wildlife just a few meters away, especially lions, elephants, giraffes, and more. Our expert guides know how to approach animals respectfully without disturbing them. During gorilla or chimpanzee trekking, you’ll get within 7 meters (about 21 feet) — close enough for incredible photos and unforgettable moments, while keeping a safe distance for both you and the animals.",
   },
   {
     question: "How far in advance should I book my safari?",
     answer:
-      "We recommend booking your safari 6-12 months in advance, especially if you're planning to travel during peak season (June to September) or if you have specific lodges in mind.",
+      "We recommend booking your safari 6 to 12 months in advance, especially if you’re planning to travel during peak seasons (June–September or December–February). This ensures you get the best lodges, permits (like gorilla trekking), and personalized planning. Last-minute trips are possible, but availability may be limited — so the earlier, the better!",
   },
   {
     question: "What types of accommodation are available?",

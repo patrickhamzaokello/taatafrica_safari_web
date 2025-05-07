@@ -115,42 +115,16 @@ export function AboutSection() {
               and authentic cultural encounters without compromising on comfort.
             </p>
 
-            {/* Key Facts Grid */}
-            <div className="grid grid-cols-2 gap-6 pt-4">
-              <div className="border-l border-amber-800/30 pl-4">
-                <p className="text-amber-500 font-serif text-2xl">12+</p>
-                <p className="text-stone-400 text-sm mt-1">
-                  Years of Excellence
-                </p>
-              </div>
-              <div className="border-l border-amber-800/30 pl-4">
-                <p className="text-amber-500 font-serif text-2xl">10</p>
-                <p className="text-stone-400 text-sm mt-1">
-                  National Parks Explored
-                </p>
-              </div>
-              <div className="border-l border-amber-800/30 pl-4">
-                <p className="text-amber-500 font-serif text-2xl">5000+</p>
-                <p className="text-stone-400 text-sm mt-1">
-                  Satisfied Adventurers
-                </p>
-              </div>
-              <div className="border-l border-amber-800/30 pl-4">
-                <p className="text-amber-500 font-serif text-2xl">24</p>
-                <p className="text-stone-400 text-sm mt-1">
-                  Expert Safari Guides
-                </p>
-              </div>
-            </div>
+            
 
             {/* Signature */}
             <div className="pt-4">
               <Image
-                src="https://images.unsplash.com/photo-1614528767034-70de9fe166e0?auto=format&fit=crop&q=80"
+                src="/girraff_on_road.png"
                 alt="Director's Signature"
-                width={160}
-                height={160} // Set height equal to width for a perfect circle
-                className="object-cover opacity-70 rounded-full" // Use rounded-full to make it a circle
+                width={100}
+                height={100} // Set height equal to width for a perfect circle
+                className="object-cover opacity-70 rounded-[200px]" // Use rounded-full to make it a circle
               />
               <p className="text-stone-400 text-sm mt-2">
                 Hannifah Namayega, Founder

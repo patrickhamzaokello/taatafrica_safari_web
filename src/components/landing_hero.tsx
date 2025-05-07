@@ -133,7 +133,7 @@ export function HeroSection() {
           >
             <div className="h-px w-12 bg-amber-600"></div>
             <p className="mx-4 text-amber-600 uppercase tracking-widest text-xs font-medium">
-              Exclusive Safari Experiences
+              Tailored Moments, Timeless Memories
             </p>
             <div className="h-px w-12 bg-amber-600"></div>
           </div>
@@ -141,8 +141,8 @@ export function HeroSection() {
           <h1
             className={`text-4xl sm:text-5xl md:text-6xl font-serif text-white font-light tracking-wide transition-all duration-1000 delay-300 ease-out ${isLoaded ? "opacity-100" : "opacity-0 translate-y-6"}`}
           >
-            <span className="block mb-2">Discover the Untamed</span>
-            <span className="text-amber-400">Elegance of Uganda</span>
+            <span className="block mb-2">Explore Uganda</span>
+            <span className="text-amber-400">With a touch of Elegance</span>
           </h1>
 
           <p
@@ -154,7 +154,7 @@ export function HeroSection() {
           <div
             className={`pt-6 transition-all duration-1000 delay-700 ease-out ${isLoaded ? "opacity-100" : "opacity-0 translate-y-6"}`}
           >
-            <Button className="bg-transparent hover:bg-amber-600 text-white border border-amber-600 px-10 py-6 rounded-none text-sm uppercase tracking-widest transition-all duration-300 hover:border-transparent">
+            <Button className="bg-transparent hover:bg-gray-100 text-white hover:text-black border border-gray-100 px-10 py-6 rounded-none text-sm uppercase tracking-widest transition-all duration-300 hover:border-transparent">
               Curate Your Journey
             </Button>
           </div>

@@ -13,7 +13,6 @@ const impactStats = [
 
 export function CharitySection() {
   const sectionRef = useRef<HTMLElement>(null);
-  const [counters, setCounters] = useState<number[]>(impactStats.map(() => 0));
 
   // Animation on scroll
   useEffect(() => {
@@ -22,11 +21,6 @@ export function CharitySection() {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("animate-fade-in-up");
-
-            // If this is the stats container, start the counter animation
-            if (entry.target.classList.contains("stats-container")) {
-              animateCounters();
-            }
 
             observer.unobserve(entry.target);
           }
@@ -45,32 +39,7 @@ export function CharitySection() {
     return () => observer.disconnect();
   }, []);
 
-  // Counter animation
-  const animateCounters = () => {
-    const duration = 2000; // 2 seconds
-    const frameDuration = 1000 / 60; // 60fps
-    const totalFrames = Math.round(duration / frameDuration);
-
-    let frame = 0;
-    const countTo = impactStats.map((stat) => stat.value);
-
-    const counter = setInterval(() => {
-      frame++;
-
-      const progress = frame / totalFrames;
-      const easeOutQuad = progress * (2 - progress); // Easing function
-
-      const newCounters = countTo.map((value) =>
-        Math.floor(value * easeOutQuad)
-      );
-      setCounters(newCounters);
-
-      if (frame === totalFrames) {
-        clearInterval(counter);
-        setCounters(countTo);
-      }
-    }, frameDuration);
-  };
+ 
 
   return (
     <section
@@ -133,21 +102,7 @@ export function CharitySection() {
                 </p>
               </div>
 
-              {/* Impact Stats - Horizontal Minimalist Layout */}
-              <div className="stats-container animate-on-scroll opacity-0 border-t border-b border-stone-200 py-8">
-                <div className="flex justify-between space-x-6">
-                  {impactStats.map((stat, index) => (
-                    <div key={index} className="text-center px-4">
-                      <div className="text-4xl font-semibold text-amber-600">
-                        {counters[index]}+
-                      </div>
-                      <div className="text-xs text-stone-500 uppercase">
-                        {stat.label}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
+              
 
               {/* Testimonial - Minimalist Quote */}
               <div className="animate-on-scroll opacity-0">

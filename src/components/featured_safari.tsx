@@ -86,7 +86,7 @@ export function FeaturedSafaris() {
           <h2 className="text-4xl font-serif mb-6 text-stone-900">Featured Safaris</h2>
           <p className="max-w-2xl mx-auto text-stone-600">
             Discover our carefully curated selection of premium safari experiences, each offering a unique perspective
-            on Africa's breathtaking landscapes and wildlife.
+            on Uganda's breathtaking landscapes and wildlife.
           </p>
         </div>
 
@@ -108,9 +108,7 @@ export function FeaturedSafaris() {
                   className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-stone-900/70 to-transparent"></div>
-                <div className="absolute bottom-4 left-4 bg-amber-600 text-white px-3 py-1 text-sm font-medium">
-                  From ${safari.startingPrice}
-                </div>
+                
               </div>
 
               <div className="p-6 space-y-4">
