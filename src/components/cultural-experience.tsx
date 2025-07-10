@@ -7,7 +7,7 @@ import {
 
 export function CulturalExperience() {
     return (
-        <section className="py-20 px-4 md:px-8 bg-stone-50">
+        <section id="Cult_Experiences" className="py-20 px-4 md:px-8 bg-stone-50">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="animate-slide-in-left">

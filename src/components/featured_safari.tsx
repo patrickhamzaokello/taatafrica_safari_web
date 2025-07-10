@@ -79,7 +79,7 @@ export function FeaturedSafaris() {
   }, [])
 
   return (
-    <section id="featured-safaris" ref={sectionRef} className="py-20 px-4 sm:px-6 bg-stone-100">
+    <section id="Featured" ref={sectionRef} className="py-20 px-4 sm:px-6 bg-stone-100">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16 section-title opacity-0">
           <p className="cursive text-amber-600 text-xl mb-2">Unforgettable Experiences</p>

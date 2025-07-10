@@ -17,7 +17,7 @@ export function AboutSection() {
   return (
     <section
       ref={sectionRef}
-      id="about-us"
+      id="About"
       className="py-24 md:py-32 bg-stone-950 relative overflow-hidden"
     >
       {/* Background Pattern - Subtle Luxury Detail */}

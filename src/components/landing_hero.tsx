@@ -18,10 +18,10 @@ export function HeroSection() {
     const handleScroll = () => {
       const scrollPosition = window.scrollY
       const heroImage = document.querySelector(".hero-image") as HTMLElement
-      
+
       // Update navbar transparency based on scroll position
       setIsScrolled(scrollPosition > 50)
-      
+
       if (heroImage) {
         // Subtle parallax effect
         heroImage.style.transform = `translateY(${scrollPosition * 0.15}px)`
@@ -61,9 +61,9 @@ export function HeroSection() {
             {/* Desktop Navigation */}
             <nav className="hidden md:flex">
               <ul className="flex space-x-8">
-                {['Featured', 'Experiences', 'Testimonies', 'Charity', 'About', 'Contact'].map((item, index) => (
+                {['Featured', 'Experiences', 'Testimonies', 'Charity', 'About', 'FAQ', 'Contact'].map((item, index) => (
                   <li key={index} className={`transition-all duration-700 delay-${index * 100} ${isLoaded ? "opacity-100" : "opacity-0 translate-y-2"}`}>
-                    <a href="#" className="text-stone-300 hover:text-amber-500 text-sm uppercase tracking-widest transition-colors duration-300">
+                    <a href={`#${item}`} className="text-stone-300 hover:text-amber-500 text-sm uppercase tracking-widest transition-colors duration-300">
                       {item}
                     </a>
                   </li>
@@ -72,7 +72,7 @@ export function HeroSection() {
             </nav>
 
             {/* Mobile Menu Button */}
-            <button 
+            <button
               className="md:hidden text-stone-300 hover:text-amber-500 transition-colors duration-300"
               onClick={toggleMenu}
               aria-label="Toggle menu"
@@ -86,14 +86,18 @@ export function HeroSection() {
         <div className={`md:hidden fixed inset-0 bg-stone-950/95 backdrop-blur-sm z-40 transition-all duration-500 ${isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
           <div className="flex flex-col items-center justify-center h-full">
             <ul className="flex flex-col items-center space-y-6">
-              {['Destinations', 'Experiences', 'Wildlife', 'Luxury Camps', 'About', 'Contact'].map((item, index) => (
+              {['Featured', 'Experiences', 'Testimonies', 'Charity', 'About','FAQ', 'Contact'].map((item, index) => (
                 <li key={index}>
-                  <a 
-                    href="#" 
+                  <a
+                    href={`#${item}`}
                     className="text-stone-300 hover:text-amber-500 text-lg uppercase tracking-widest transition-colors duration-300"
                     onClick={(e) => {
                       e.preventDefault();
-                      toggleMenu();
+                      const section = document.getElementById(item);
+                      if (section) {
+                        section.scrollIntoView({ behavior: 'smooth' });
+                      }
+                      toggleMenu(); // close menu after scroll
                     }}
                   >
                     {item}
@@ -154,8 +158,8 @@ export function HeroSection() {
           <div
             className={`pt-6 transition-all duration-1000 delay-700 ease-out ${isLoaded ? "opacity-100" : "opacity-0 translate-y-6"}`}
           >
-            <Button className="bg-transparent hover:bg-gray-100 text-white hover:text-black border border-gray-100 px-10 py-6 rounded-none text-sm uppercase tracking-widest transition-all duration-300 hover:border-transparent">
-              Curate Your Journey
+            <Button className="bg-transparent hover:bg-gray-100 text-white hover:text-black border border-gray-100 px-10 py-6 rounded-none text-sm uppercase tracking-widest transition-all duration-300 hover:border-transparent" onClick={scrollToContent}>
+              Get Started Now
             </Button>
           </div>
         </div>

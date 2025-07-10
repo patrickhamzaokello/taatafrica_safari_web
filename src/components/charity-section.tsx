@@ -45,6 +45,7 @@ export function CharitySection() {
     <section
       ref={sectionRef}
       className="py-28 bg-stone-100 relative overflow-hidden"
+      id="Charity"
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-5xl mx-auto">

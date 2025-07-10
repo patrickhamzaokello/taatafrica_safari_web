@@ -1,7 +1,7 @@
 
 export function BlogSection() {
   return (
-   <section className="py-20 px-4 md:px-8 bg-stone-50">
+   <section id="Blog" className="py-20 px-4 md:px-8 bg-stone-50">
    <div className="max-w-7xl mx-auto">
      <div className="text-center mb-12">
        <p className="cursive text-amber-600 text-2xl mb-2">
