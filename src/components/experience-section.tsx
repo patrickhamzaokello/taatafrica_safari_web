@@ -12,7 +12,7 @@ const experiences = [
     desc: "Encounter lions, elephants, buffalo, leopards, and rhinos in their natural habitat with our expert trackers who know every trail and watering hole.",
     highlights: ["Expert local guides", "Prime viewing locations", "Photography support"],
     duration: "Full day experience",
-    image: "https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?q=80&w=800&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1516426122078-c23e76319801?q=80&w=800&auto=format&fit=crop",
     badge: "Most Popular",
   },
   {
@@ -22,7 +22,7 @@ const experiences = [
     desc: "Engage with local communities, learn traditional crafts, and participate in authentic cultural ceremonies that have been passed down for generations.",
     highlights: ["Traditional craft workshops", "Community visits", "Cultural ceremonies"],
     duration: "Half day experience",
-    image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=800&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1534476478164-b15fec4f091c?q=80&w=800&auto=format&fit=crop",
     badge: "Authentic",
   },
   {
@@ -32,7 +32,7 @@ const experiences = [
     desc: "Travel in groups of no more than 8 guests, ensuring personalized attention and minimal environmental impact while maximizing wildlife encounters.",
     highlights: ["Maximum 8 guests", "Personal attention", "Flexible itinerary"],
     duration: "All experiences",
-    image: "https://images.unsplash.com/photo-1516426122078-c23e76319801?q=80&w=800&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1527073655851-770661160114?q=80&w=800&auto=format&fit=crop",
     badge: "Exclusive",
   },
   {
@@ -42,7 +42,7 @@ const experiences = [
     desc: "Access exclusive wilderness areas far from tourist crowds, where wildlife roams freely across vast landscapes untouched by mass tourism.",
     highlights: ["Private conservancies", "Untouched wilderness", "Rare wildlife sightings"],
     duration: "Multi-day expeditions",
-    image: "https://images.unsplash.com/photo-1547036967-23d11aacaee0?q=80&w=800&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1518459384564-ecfd8e80721f?q=80&w=800&auto=format&fit=crop",
     badge: "Premium",
   },
 ]
@@ -168,11 +168,11 @@ export function ExperienceSection() {
         <div className="bg-white rounded-2xl p-8 mb-16 shadow-sm">
           <div className="grid md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-3xl font-bold text-stone-900 mb-2">15+</div>
+              <div className="text-3xl font-bold text-stone-900 mb-2">2</div>
               <div className="text-stone-600">Years Experience</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-stone-900 mb-2">500+</div>
+              <div className="text-3xl font-bold text-stone-900 mb-2">100+</div>
               <div className="text-stone-600">Happy Travelers</div>
             </div>
             <div>
