@@ -1,150 +1,209 @@
 "use client"
 
-import { Star, Heart, Users, Map, ArrowRight } from "lucide-react"
-import { useEffect, useRef } from "react"
+import { Star, Heart, Users, Map, ArrowRight, Clock, Award } from "lucide-react"
+import { useEffect, useRef, useState } from "react"
+import Image from "next/image"
 
 const experiences = [
   {
     icon: Star,
     title: "Big Five Sightings",
-    desc: "Encounter lions, elephants, buffalo, leopards, and rhinos in their natural habitat with our expert trackers.",
-    color: "bg-amber-50 border-amber-200",
-    iconColor: "text-amber-600",
+    subtitle: "The Ultimate Wildlife Encounter",
+    desc: "Encounter lions, elephants, buffalo, leopards, and rhinos in their natural habitat with our expert trackers who know every trail and watering hole.",
+    highlights: ["Expert local guides", "Prime viewing locations", "Photography support"],
+    duration: "Full day experience",
+    image: "https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?q=80&w=800&auto=format&fit=crop",
+    badge: "Most Popular",
   },
   {
     icon: Heart,
     title: "Cultural Immersion",
-    desc: "Engage with local communities, learn traditional crafts, and participate in authentic cultural ceremonies.",
-    color: "bg-stone-50 border-stone-200",
-    iconColor: "text-stone-700",
+    subtitle: "Connect with Local Communities",
+    desc: "Engage with local communities, learn traditional crafts, and participate in authentic cultural ceremonies that have been passed down for generations.",
+    highlights: ["Traditional craft workshops", "Community visits", "Cultural ceremonies"],
+    duration: "Half day experience",
+    image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=800&auto=format&fit=crop",
+    badge: "Authentic",
   },
   {
     icon: Users,
     title: "Small Groups",
-    desc: "Travel in groups of no more than 8 guests, ensuring personalized attention and minimal environmental impact.",
-    color: "bg-amber-50 border-amber-200",
-    iconColor: "text-amber-600",
+    subtitle: "Intimate Safari Experience",
+    desc: "Travel in groups of no more than 8 guests, ensuring personalized attention and minimal environmental impact while maximizing wildlife encounters.",
+    highlights: ["Maximum 8 guests", "Personal attention", "Flexible itinerary"],
+    duration: "All experiences",
+    image: "https://images.unsplash.com/photo-1516426122078-c23e76319801?q=80&w=800&auto=format&fit=crop",
+    badge: "Exclusive",
   },
   {
     icon: Map,
     title: "Remote Locations",
-    desc: "Access exclusive wilderness areas far from tourist crowds, where wildlife roams freely across vast landscapes.",
-    color: "bg-stone-50 border-stone-200",
-    iconColor: "text-stone-700",
+    subtitle: "Off the Beaten Path",
+    desc: "Access exclusive wilderness areas far from tourist crowds, where wildlife roams freely across vast landscapes untouched by mass tourism.",
+    highlights: ["Private conservancies", "Untouched wilderness", "Rare wildlife sightings"],
+    duration: "Multi-day expeditions",
+    image: "https://images.unsplash.com/photo-1547036967-23d11aacaee0?q=80&w=800&auto=format&fit=crop",
+    badge: "Premium",
   },
 ]
 
 export function ExperienceSection() {
   const sectionRef = useRef<HTMLElement>(null)
-  const itemRefs = useRef<(HTMLDivElement | null)[]>([])
+  const [isVisible, setIsVisible] = useState(false)
+  const [activeCard, setActiveCard] = useState<number | null>(null)
 
-  // Animation on scroll
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add("animate-fade-in-up")
-            observer.unobserve(entry.target)
+            setIsVisible(true)
           }
         })
       },
       { threshold: 0.1 },
     )
 
-    // Observe section title
     if (sectionRef.current) {
-      const titleElements = sectionRef.current.querySelectorAll(".section-title")
-      titleElements.forEach((el) => observer.observe(el))
+      observer.observe(sectionRef.current)
     }
-
-    // Observe each item with a delay
-    itemRefs.current.forEach((item, index) => {
-      if (item) {
-        setTimeout(() => {
-          observer.observe(item)
-        }, index * 150)
-      }
-    })
 
     return () => observer.disconnect()
   }, [])
 
   return (
-    <section ref={sectionRef} id="Experiences" className="py-24 relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div
-          className="absolute inset-0 bg-repeat"
-          style={{
-            backgroundImage:
-              "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fillRule='evenodd'%3E%3Cg fill='%23000000' fillOpacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")",
-            backgroundSize: "60px 60px",
-          }}
-        ></div>
-      </div>
-
-      <div className="container mx-auto px-4 md:px-6 relative">
-        {/* Decorative Element */}
-        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-20 h-1 bg-amber-600"></div>
-
-        <div className="text-center mb-16">
-          <p className="italic text-amber-600 text-xl mb-3 section-title opacity-0">Experience Uganda</p>
-          <h2 className="text-4xl font-serif mb-6 section-title opacity-0">Where Wildlife Meets Culture</h2>
-          <p className="max-w-2xl mx-auto text-stone-600 section-title opacity-0">
-            Our safaris offer more than just wildlife viewing. Immerse yourself in the rich tapestry of African
-            landscapes, wildlife, and cultural heritage.
+    <section ref={sectionRef} id="Experiences" className="py-24 bg-stone-50">
+      <div className="max-w-7xl mx-auto px-6">
+        {/* Enhanced Header */}
+        <div className="text-center mb-20">
+          <div className="inline-flex items-center gap-2 bg-amber-100 text-amber-800 px-4 py-2 rounded-full text-sm font-medium mb-6">
+            <Award className="w-4 h-4" />
+            Curated Experiences
+          </div>
+          <h2 className="text-4xl md:text-5xl font-serif text-stone-900 mb-6">
+            Unforgettable Safari
+            <span className="block text-amber-600">Experiences</span>
+          </h2>
+          <p className="text-xl text-stone-600 max-w-3xl mx-auto leading-relaxed">
+            Each experience is thoughtfully designed to create lasting memories while respecting wildlife and local
+            communities
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* Experience Cards */}
+        <div className="grid lg:grid-cols-2 gap-8 mb-16">
           {experiences.map((item, index) => (
             <div
               key={index}
-              ref={(el) => {
-                itemRefs.current[index] = el;
-              }}
-              className={`p-8 border ${item.color} rounded-none hover:shadow-md transition-all duration-300 opacity-0 group relative overflow-hidden`}
+              className={`group relative bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+              style={{ transitionDelay: `${index * 150}ms` }}
+              onMouseEnter={() => setActiveCard(index)}
+              onMouseLeave={() => setActiveCard(null)}
             >
-              {/* Icon Container */}
-              <div className="mb-6 relative">
-                <div className="w-16 h-16 flex items-center justify-center border border-current rounded-full mb-4">
-                  <item.icon className={`w-8 h-8 ${item.iconColor}`} />
+              {/* Badge */}
+              {item.badge && (
+                <div className="absolute top-4 left-4 z-20 bg-amber-600 text-white px-3 py-1 rounded-full text-xs font-semibold">
+                  {item.badge}
                 </div>
-                <h3 className="text-xl font-serif mb-3">{item.title}</h3>
+              )}
+
+              {/* Image Section */}
+              <div className="relative h-64 overflow-hidden">
+                <Image
+                  src={item.image || "/placeholder.svg"}
+                  alt={item.title}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+
+                {/* Icon Overlay */}
+                <div className="absolute bottom-4 left-4">
+                  <div className="w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center">
+                    <item.icon className="w-6 h-6 text-stone-700" />
+                  </div>
+                </div>
               </div>
 
-              <p className="text-stone-600 mb-4">{item.desc}</p>
+              {/* Content Section */}
+              <div className="p-8">
+                <div className="flex items-center gap-2 text-amber-600 text-sm font-medium mb-2">
+                  <Clock className="w-4 h-4" />
+                  {item.duration}
+                </div>
 
-              <a
-                href="#"
-                className="inline-flex items-center text-sm font-medium group-hover:text-amber-600 transition-colors"
-              >
-                Learn more
-                <ArrowRight size={16} className="ml-1 transition-transform group-hover:translate-x-1" />
-              </a>
+                <h3 className="text-2xl font-serif text-stone-900 mb-2">{item.title}</h3>
+                <p className="text-amber-600 font-medium mb-4">{item.subtitle}</p>
+                <p className="text-stone-600 leading-relaxed mb-6">{item.desc}</p>
 
-              {/* Decorative Corner */}
-              <div className="absolute bottom-0 right-0 w-12 h-12 overflow-hidden">
-                <div
-                  className={`absolute transform rotate-45 translate-x-6 translate-y-6 w-12 h-1 ${index % 2 === 0 ? "bg-amber-600/30" : "bg-stone-600/20"}`}
-                ></div>
+                {/* Highlights */}
+                <div className="mb-6">
+                  <h4 className="text-sm font-semibold text-stone-900 mb-3 uppercase tracking-wide">What's Included</h4>
+                  <ul className="space-y-2">
+                    {item.highlights.map((highlight, idx) => (
+                      <li key={idx} className="flex items-center text-sm text-stone-600">
+                        <div className="w-1.5 h-1.5 bg-amber-600 rounded-full mr-3"></div>
+                        {highlight}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* CTA */}
+                <button className="group/btn inline-flex items-center text-stone-900 font-medium hover:text-amber-600 transition-colors duration-200">
+                  Learn More
+                  <ArrowRight className="w-4 h-4 ml-2 transition-transform duration-200 group-hover/btn:translate-x-1" />
+                </button>
               </div>
+
+              {/* Hover Effect Border */}
+              <div
+                className={`absolute inset-0 border-2 border-transparent rounded-2xl transition-colors duration-300 ${activeCard === index ? "border-amber-200" : ""}`}
+              ></div>
             </div>
           ))}
         </div>
 
-        {/* Bottom CTA */}
-        <div className="text-center mt-16 opacity-0" ref={(el) => { itemRefs.current[4] = el; }}>
-          <a
-            href="#"
-            className="inline-flex items-center justify-center px-8 py-3 border-2 border-amber-600 text-amber-600 hover:bg-amber-600 hover:text-white transition-colors duration-300 font-medium"
-          >
-            Explore All Experiences
-          </a>
+        {/* Stats Section */}
+        <div className="bg-white rounded-2xl p-8 mb-16 shadow-sm">
+          <div className="grid md:grid-cols-4 gap-8 text-center">
+            <div>
+              <div className="text-3xl font-bold text-stone-900 mb-2">15+</div>
+              <div className="text-stone-600">Years Experience</div>
+            </div>
+            <div>
+              <div className="text-3xl font-bold text-stone-900 mb-2">500+</div>
+              <div className="text-stone-600">Happy Travelers</div>
+            </div>
+            <div>
+              <div className="text-3xl font-bold text-stone-900 mb-2">98%</div>
+              <div className="text-stone-600">Satisfaction Rate</div>
+            </div>
+            <div>
+              <div className="text-3xl font-bold text-stone-900 mb-2">25+</div>
+              <div className="text-stone-600">Wildlife Species</div>
+            </div>
+          </div>
+        </div>
+
+        {/* Enhanced CTA */}
+        <div className="text-center">
+          <div className="bg-gradient-to-r from-stone-900 to-stone-800 rounded-2xl p-8 text-white">
+            <h3 className="text-2xl font-serif mb-4">Ready to Begin Your Adventure?</h3>
+            <p className="text-stone-300 mb-6 max-w-2xl mx-auto">
+              Let us create a personalized safari experience that matches your interests and exceeds your expectations
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-3 rounded-lg font-medium transition-colors duration-200">
+                Plan Your Safari
+              </button>
+              <button className="border border-stone-600 hover:border-stone-500 text-white px-8 py-3 rounded-lg font-medium transition-colors duration-200">
+                View Sample Itineraries
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
   )
 }
-
