@@ -62,6 +62,21 @@ export function HeroSection() {
 
     window.addEventListener("scroll", handleScroll)
 
+    // Load TripAdvisor script after component mounts
+    const loadTripAdvisorScript = () => {
+      const script = document.createElement('script')
+      script.src = "https://www.jscache.com/wejs?wtype=socialButtonRate&uniq=722&locationId=33341161&color=green&reviewCountRequested=false&lang=en_US&display_version=2"
+      script.async = true
+      script.setAttribute('data-loadtrk', '')
+      script.onload = function() {
+        script.setAttribute('data-loadtrk', 'true')
+      }
+      document.head.appendChild(script)
+    }
+
+    // Load TripAdvisor script with a slight delay to ensure DOM is ready
+    setTimeout(loadTripAdvisorScript, 1000)
+
     return () => {
       window.removeEventListener("scroll", handleScroll)
       clearInterval(imageInterval)
@@ -195,6 +210,8 @@ export function HeroSection() {
         </div>
       </div>
 
+
+
       {/* Horizontal Lines - Luxury Detail */}
       <div className="absolute top-0 left-0 right-0 h-px bg-amber-800/30 z-20"></div>
       <div className="absolute bottom-0 left-0 right-0 h-px bg-amber-800/30 z-20"></div>
@@ -229,12 +246,31 @@ export function HeroSection() {
           <div
             className={`pt-6 transition-all duration-1000 delay-700 ease-out ${isLoaded ? "opacity-100" : "opacity-0 translate-y-6"}`}
           >
-            <Button
-              className="bg-transparent hover:bg-gray-100 text-white hover:text-black border border-gray-100 px-10 py-6 rounded-none text-sm uppercase tracking-widest transition-all duration-300 hover:border-transparent"
-              onClick={scrollToContent}
-            >
-              Get Started Now
-            </Button>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Button
+                className="bg-transparent hover:bg-gray-100 text-white hover:text-black border border-gray-100 px-10 py-6 rounded-none text-sm uppercase tracking-widest transition-all duration-300 hover:border-transparent"
+                onClick={scrollToContent}
+              >
+                Get Started Now
+              </Button>
+              
+              {/* TripAdvisor Rating Widget - Next to Get Started Button */}
+              <div className="flex items-center">
+                <a
+                  href="https://www.tripadvisor.com/UserReviewEdit-g298044-d33341161-Tata_Africa_Safaris-Entebbe_Central_Region.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-none text-sm uppercase tracking-widest transition-all duration-300 flex items-center gap-3 border border-green-600 hover:border-green-700"
+                >
+                  <img 
+                    src="https://static.tacdn.com/img2/brand_refresh/Tripadvisor_logomark.svg" 
+                    alt="TripAdvisor" 
+                    className="w-5 h-5"
+                  />
+                  <span className="text-black">Ratings</span>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
 
