@@ -5,6 +5,9 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
+import { Textarea } from "@/components/ui/textarea"
 import { 
   Calendar, 
   Clock, 
@@ -16,7 +19,9 @@ import {
   Mail,
   Share2,
   Heart,
-  Download
+  Download,
+  X,
+  CheckCircle
 } from "lucide-react"
 
 // This component would receive package data as props or fetch it based on ID
@@ -46,9 +51,24 @@ interface PackageDetailPageProps {
   onBack: () => void;
 }
 
+interface BookingFormData {
+  name: string;
+  email: string;
+  message: string;
+}
+
 export function PackageDetailPage({ packageData, onBack }: PackageDetailPageProps) {
   const [activeImageIndex, setActiveImageIndex] = useState(0)
   const [isWishlisted, setIsWishlisted] = useState(false)
+  const [showBookingForm, setShowBookingForm] = useState(false)
+  const [bookingType, setBookingType] = useState<'book' | 'quote'>('book')
+  const [showSuccess, setShowSuccess] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [formData, setFormData] = useState<BookingFormData>({
+    name: '',
+    email: '',
+    message: ''
+  })
 
   if (!packageData) {
     return (
@@ -66,6 +86,39 @@ export function PackageDetailPage({ packageData, onBack }: PackageDetailPageProp
   }
 
   const pkg = packageData
+
+  const handleBookingClick = (type: 'book' | 'quote') => {
+    setBookingType(type)
+    setShowBookingForm(true)
+    setShowSuccess(false)
+  }
+
+  const handleFormSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+    
+    // Simulate API call
+    setTimeout(() => {
+      setIsSubmitting(false)
+      setShowBookingForm(false)
+      setShowSuccess(true)
+      setFormData({ name: '', email: '', message: '' })
+      
+      // Hide success message after 5 seconds
+      setTimeout(() => {
+        setShowSuccess(false)
+      }, 5000)
+    }, 1500)
+  }
+
+  const handleInputChange = (field: keyof BookingFormData, value: string) => {
+    setFormData(prev => ({ ...prev, [field]: value }))
+  }
+
+  const closeForm = () => {
+    setShowBookingForm(false)
+    setFormData({ name: '', email: '', message: '' })
+  }
 
   return (
     <div className="min-h-screen bg-white">
@@ -102,12 +155,134 @@ export function PackageDetailPage({ packageData, onBack }: PackageDetailPageProp
             >
               <Heart size={16} className={isWishlisted ? "fill-red-500 text-red-500" : ""} />
             </Button>
-            <Button size="sm" className="bg-amber-600 hover:bg-amber-700">
+            <Button 
+              size="sm" 
+              className="bg-amber-600 hover:bg-amber-700"
+              onClick={() => handleBookingClick('book')}
+            >
               Book Now
             </Button>
           </div>
         </div>
       </div>
+
+      {/* Success Message */}
+      {showSuccess && (
+        <div className="fixed top-20 left-1/2 transform -translate-x-1/2 z-50 bg-green-50 border border-green-200 px-6 py-4 rounded-lg shadow-lg max-w-md">
+          <div className="flex items-center gap-3">
+            <CheckCircle className="text-green-600" size={20} />
+            <div>
+              <p className="font-semibold text-green-900">Request Submitted Successfully!</p>
+              <p className="text-sm text-green-700">We'll get back to you within 24 hours.</p>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Booking Form Modal */}
+      {showBookingForm && (
+        <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
+          <div className="bg-white rounded-lg shadow-xl max-w-md w-full max-h-[90vh] overflow-y-auto">
+            <div className="p-6">
+              <div className="flex items-center justify-between mb-6">
+                <h2 className="text-xl font-serif text-stone-900">
+                  {bookingType === 'book' ? 'Book This Experience' : 'Request Custom Quote'}
+                </h2>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={closeForm}
+                  className="text-stone-600 hover:text-stone-900"
+                >
+                  <X size={20} />
+                </Button>
+              </div>
+
+              <div className="mb-6 p-4 bg-stone-50 rounded-lg">
+                <h3 className="font-semibold text-stone-900 mb-1">{pkg.title}</h3>
+                <p className="text-sm text-stone-600">{pkg.duration} • From ${pkg.startingPrice} per person</p>
+              </div>
+
+              <form onSubmit={handleFormSubmit} className="space-y-4">
+                <div>
+                  <Label htmlFor="name">Full Name *</Label>
+                  <Input
+                    id="name"
+                    type="text"
+                    required
+                    value={formData.name}
+                    onChange={(e) => handleInputChange('name', e.target.value)}
+                    placeholder="Enter your full name"
+                    className="mt-1"
+                  />
+                </div>
+
+                <div>
+                  <Label htmlFor="email">Email Address *</Label>
+                  <Input
+                    id="email"
+                    type="email"
+                    required
+                    value={formData.email}
+                    onChange={(e) => handleInputChange('email', e.target.value)}
+                    placeholder="Enter your email address"
+                    className="mt-1"
+                  />
+                </div>
+
+                <div>
+                  <Label htmlFor="message">
+                    {bookingType === 'book' ? 'Additional Information' : 'Tell us about your requirements'}
+                  </Label>
+                  <Textarea
+                    id="message"
+                    value={formData.message}
+                    onChange={(e) => handleInputChange('message', e.target.value)}
+                    placeholder={
+                      bookingType === 'book' 
+                        ? "Any special requests, dietary requirements, or questions..." 
+                        : "Tell us about your preferred dates, group size, budget, and any special requirements..."
+                    }
+                    rows={4}
+                    className="mt-1"
+                  />
+                </div>
+
+                <div className="flex gap-3 pt-4">
+                  <Button
+                    type="button"
+                    variant="outline"
+                    onClick={closeForm}
+                    className="flex-1"
+                    disabled={isSubmitting}
+                  >
+                    Cancel
+                  </Button>
+                  <Button
+                    type="submit"
+                    className="flex-1 bg-amber-600 hover:bg-amber-700"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? (
+                      <span className="flex items-center gap-2">
+                        <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                        Submitting...
+                      </span>
+                    ) : (
+                      bookingType === 'book' ? 'Submit Booking' : 'Request Quote'
+                    )}
+                  </Button>
+                </div>
+              </form>
+
+              <p className="text-xs text-stone-500 mt-4 text-center">
+                By submitting this form, you agree to our terms and conditions. 
+                We'll contact you within 24 hours to confirm your request.
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Hero Section */}
       <section className="relative">
@@ -317,10 +492,17 @@ export function PackageDetailPage({ packageData, onBack }: PackageDetailPageProp
                   </div>
                   
                   <div className="space-y-4 mb-6">
-                    <Button className="w-full bg-amber-600 hover:bg-amber-700 text-white py-3 text-lg">
+                    <Button 
+                      className="w-full bg-amber-600 hover:bg-amber-700 text-white py-3 text-lg"
+                      onClick={() => handleBookingClick('book')}
+                    >
                       Book This Experience
                     </Button>
-                    <Button variant="outline" className="w-full">
+                    <Button 
+                      variant="outline" 
+                      className="w-full"
+                      onClick={() => handleBookingClick('quote')}
+                    >
                       Request Custom Quote
                     </Button>
                   </div>

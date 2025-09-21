@@ -1,6 +1,6 @@
 export function SafariPackages(){
     return (
-        <section className="py-20 px-4 md:px-8">
+        <section id="Experiences" className="py-20 px-4 md:px-8">
                 <div className="max-w-7xl mx-auto">
                   <div className="text-center mb-16">
                     <p className="cursive text-amber-600 text-2xl mb-2">
@@ -63,9 +63,7 @@ export function SafariPackages(){
                               </li>
                             ))}
                           </ul>
-                          <button className="w-full mt-6 bg-amber-600 text-white py-3 rounded hover:bg-amber-700 transition-colors">
-                            Book Now
-                          </button>
+                      
                         </div>
                       </div>
                     ))}
