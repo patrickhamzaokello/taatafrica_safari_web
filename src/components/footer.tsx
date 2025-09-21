@@ -61,7 +61,7 @@ export function Footer() {
               <p>Uganda, East Africa</p>
               <p className="pt-2">
                 <a
-                  href="tel:+254123456789"
+                  href="tel:+256766274001"
                   className="hover:text-amber-400 transition-colors"
                 >
                   +256 (0) 766 274 001

@@ -36,8 +36,8 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "African Safari Adventures",
-  description: "Immerse yourself in authentic African safaris and cultural experiences",
+  title: "Tata Africa Safaris | Mid & Luxury East Africa Safari Tours & Tailored Experiences",
+  description: "Custom mid and luxury safari tours in East Africa. Explore Uganda, Kenya, Tanzania & Rwanda with gorilla trekking, wildlife safaris, and cultural experiences.",
 };
 
 export default function RootLayout({

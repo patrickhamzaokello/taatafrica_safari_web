@@ -1,0 +1,291 @@
+{
+  "packages": [
+    {
+      "id": "home-of-flavors-001",
+      "title": "Home of Flavors – A Traditional Ugandan Dining Experience",
+      "shortDescription": "Step into the heart of Ugandan culture with an immersive day of authentic cooking, storytelling, music, and dining in a traditional family home.",
+      "fullDescription": "Step into the heart of Ugandan culture with Tata Africa Safaris' Home of Flavors experience. Guests are welcomed into a traditional family home for an immersive day of authentic cooking, storytelling, music, and dining. This experience brings Uganda's culinary and cultural heritage to life, offering a unique memory that guests will cherish forever.",
+      "images": {
+        "featured": "https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=2069&auto=format&fit=crop",
+        "gallery": [
+          "https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=2069&auto=format&fit=crop",
+          "https://images.unsplash.com/photo-1577303935007-0d306ee638cf?q=80&w=2070&auto=format&fit=crop",
+          "https://images.unsplash.com/photo-1596797038530-2c107229654b?q=80&w=2126&auto=format&fit=crop"
+        ]
+      },
+      "duration": "1 Day",
+      "styles": ["Mid-Luxury", "Luxury", "Cultural", "Culinary"],
+      "location": "Traditional Family Home, Kampala/Entebbe",
+      "groupSize": "Max 8",
+      "startingPrice": 150,
+      "currency": "USD",
+      "season": "Year-round",
+      "difficulty": "Easy",
+      "highlights": [
+        "Authentic cooking experience with local family",
+        "Traditional music and dance performance",
+        "Hands-on preparation of luwombo, matoke, and groundnut sauce",
+        "Cultural storytelling and rituals",
+        "Private luxury transport included"
+      ],
+      "itinerary": [
+        {
+          "time": "Morning / Arrival",
+          "activities": [
+            "Pick-up from Kampala or Entebbe in a private luxury vehicle",
+            "Arrival at the family home and warm traditional greeting with locally inspired refreshments"
+          ]
+        },
+        {
+          "time": "Cooking & Cultural Experience", 
+          "activities": [
+            "Participate in preparing traditional Ugandan dishes, including luwombo, matoke, groundnut sauce, and millet bread",
+            "Learn hands-on techniques from family members and local chefs",
+            "Explore local ingredients and cooking methods, gaining insight into Ugandan culinary heritage"
+          ]
+        },
+        {
+          "time": "Lunch / Dining Experience",
+          "activities": [
+            "Enjoy a freshly prepared family-style traditional meal",
+            "Guests are invited to experience the rituals and stories behind each dish",
+            "Traditional music and dance performance in the courtyard or garden"
+          ]
+        },
+        {
+          "time": "Afternoon / Leisure & Departure",
+          "activities": [
+            "Optional photo session in traditional attire or around the home's grounds",
+            "Tea, tropical fruits, or Ugandan coffee served before departure",
+            "Private transfer back to Kampala or Entebbe"
+          ]
+        }
+      ],
+      "inclusions": [
+        "Private transport & English-speaking guide",
+        "Authentic cooking and dining experience", 
+        "Participation in cultural activities (music, dance, storytelling)",
+        "Refreshments and traditional meal",
+        "Photos of the experience"
+      ],
+      "exclusions": [
+        "International flights",
+        "Travel insurance",
+        "Personal expenses",
+        "Gratuities"
+      ],
+      "whatToBring": [
+        "Comfortable clothing",
+        "Camera",
+        "Sunscreen",
+        "Light jacket for evening"
+      ],
+      "bookingInfo": {
+        "minimumPax": 2,
+        "maximumPax": 8,
+        "cancellationPolicy": "Free cancellation up to 48 hours before the experience",
+        "paymentTerms": "50% deposit required, balance due 7 days before departure"
+      },
+      "categories": ["Cultural", "Culinary", "Day Trip"],
+      "featured": true,
+      "createdAt": "2024-01-15T00:00:00Z",
+      "updatedAt": "2024-01-15T00:00:00Z"
+    },
+    {
+      "id": "gorilla-adventure-004",
+      "title": "4-Day Uganda Gorilla Adventure with Lake Bunyonyi Exploration",
+      "shortDescription": "Encounter mountain gorillas in their natural habitat at Bwindi National Park, combined with golden monkey trekking and the serene beauty of Lake Bunyonyi.",
+      "fullDescription": "The 4-day gorilla trekking safari and Lake Bunyonyi offered by Tata Safari tours takes you to Bwindi National Park to encounter the mountain gorillas in their natural habitat. This private tour combines the thrill of gorilla trekking with golden monkey encounters and cultural experiences at one of Uganda's most beautiful lakes.",
+      "images": {
+        "featured": "https://images.unsplash.com/photo-1551632811-561732d1e306?q=80&w=2070&auto=format&fit=crop",
+        "gallery": [
+          "https://images.unsplash.com/photo-1551632811-561732d1e306?q=80&w=2070&auto=format&fit=crop",
+          "https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=2070&auto=format&fit=crop",
+          "https://images.unsplash.com/photo-1516426122078-c23e76319801?q=80&w=2068&auto=format&fit=crop"
+        ]
+      },
+      "duration": "4 Days",
+      "styles": ["Adventure", "Wildlife", "Cultural"],
+      "location": "Bwindi National Park, Mgahinga National Park, Lake Bunyonyi",
+      "groupSize": "Private Group",
+      "startingPrice": 2404,
+      "currency": "USD",
+      "season": "Year-round",
+      "difficulty": "Moderate",
+      "highlights": [
+        "Mountain gorilla trekking in Bwindi Impenetrable National Park",
+        "Golden monkey trekking at Mgahinga Gorilla National Park",
+        "Batwa cultural experience and coffee making",
+        "Canoe trekking at Lake Mutanda",
+        "Scenic drive through western Uganda's landscapes"
+      ],
+      "itinerary": [
+        {
+          "time": "Day 1: Transfer from Entebbe to Bwindi National Park",
+          "activities": [
+            "Pick up from Entebbe International Airport or Entebbe town",
+            "8-9 hour drive through western Uganda (Masaka, Mbarara, Kabale)",
+            "Stopover at Equator crossing for coffee break and handicraft shopping",
+            "Lunch at Igongo Cultural Centre in Mbarara",
+            "Arrival and check-in at Bwindi National Park"
+          ]
+        },
+        {
+          "time": "Day 2: Gorilla Trekking Adventure",
+          "activities": [
+            "Early breakfast and transfer to Bwindi National Park gate",
+            "Briefing by national park guide about gorilla trekking",
+            "Gorilla family assignment and trek (duration varies)",
+            "Close encounter with mountain gorillas in their natural habitat",
+            "Return to lodge for rest and reflection"
+          ]
+        },
+        {
+          "time": "Day 3: Golden Monkey Trekking & Cultural Experiences",
+          "activities": [
+            "Golden monkey trekking at Mgahinga Gorilla National Park",
+            "Batwa cultural experience with local community",
+            "Coffee making experience with local farmers",
+            "Canoe trekking at Lake Mutanda",
+            "Transfer to Lake Bunyonyi for overnight"
+          ]
+        },
+        {
+          "time": "Day 4: Scenic Return to Entebbe",
+          "activities": [
+            "Early morning departure from Lake Bunyonyi",
+            "8-9 hour scenic drive back to Entebbe",
+            "Stopover at local market near Mbarara for refreshments",
+            "Lunch in Masaka featuring authentic Ugandan cuisine",
+            "Arrival at Entebbe International Airport or accommodation"
+          ]
+        }
+      ],
+      "inclusions": [
+        "Park entry fees",
+        "Gorilla permits",
+        "Professional tour guide",
+        "4x4 vehicle with driver",
+        "Accommodation and meals",
+        "Cultural experiences"
+      ],
+      "exclusions": [
+        "Travel insurance",
+        "Personal costs",
+        "International flights",
+        "Tips and gratuities"
+      ],
+      "whatToBring": [
+        "Sturdy hiking boots",
+        "Long-sleeved shirts and pants",
+        "Rain jacket",
+        "Camera with extra batteries",
+        "Insect repellent",
+        "Personal medications"
+      ],
+      "bookingInfo": {
+        "minimumPax": 1,
+        "maximumPax": 8,
+        "cancellationPolicy": "Cancel up to 3 days in advance for full refund",
+        "paymentTerms": "Confirmation within 48 hours, subject to availability",
+        "medicalRequirements": "Moderate physical fitness required. Not suitable for pregnant travelers, heart problems, or back issues."
+      },
+      "categories": ["Wildlife", "Adventure", "Cultural", "Multi-day"],
+      "featured": true,
+      "createdAt": "2024-01-20T00:00:00Z",
+      "updatedAt": "2024-01-20T00:00:00Z"
+    },
+    {
+      "id": "murchison-falls-002",
+      "title": "2-Day Murchison Falls National Park Safari Tour",
+      "shortDescription": "Experience the power of the Nile River and diverse wildlife with game drives, boat cruises, and visits to the magnificent Murchison Falls.",
+      "fullDescription": "Embarking on a two-day safari at Murchison Falls National Park in Uganda offers an unforgettable experience filled with awe-inspiring landscapes, diverse wildlife, and the mesmerizing power of the Nile River. This journey promises both adventure and tranquility, making it a perfect escape for nature enthusiasts and adventure seekers alike.",
+      "images": {
+        "featured": "https://images.unsplash.com/photo-1516426122078-c23e76319801?q=80&w=2068&auto=format&fit=crop",
+        "gallery": [
+          "https://images.unsplash.com/photo-1516426122078-c23e76319801?q=80&w=2068&auto=format&fit=crop",
+          "https://images.unsplash.com/photo-1551632811-561732d1e306?q=80&w=2070&auto=format&fit=crop",
+          "https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=2070&auto=format&fit=crop"
+        ]
+      },
+      "duration": "2 Days",
+      "styles": ["Wildlife", "Adventure", "Nature"],
+      "location": "Murchison Falls National Park, River Nile",
+      "groupSize": "Private Group",
+      "startingPrice": 850,
+      "currency": "USD",
+      "season": "Year-round",
+      "difficulty": "Easy to Moderate",
+      "highlights": [
+        "Visit to the top of Murchison Falls",
+        "Boat cruise on the River Nile",
+        "Early morning game drive with big game viewing",
+        "Over 450 bird species including rare shoebill stork",
+        "Hippos, crocodiles, and diverse waterbirds"
+      ],
+      "itinerary": [
+        {
+          "time": "Day 1: Transfer to Murchison Falls & Afternoon Activities",
+          "activities": [
+            "Early morning departure from Entebbe (5-7 hour scenic drive)",
+            "Arrival at Murchison Falls National Park",
+            "Visit to the top of Murchison Falls - witness the Nile exploding through narrow gorge",
+            "Check-in at lodge and hearty lunch",
+            "Afternoon boat cruise on River Nile from Paraa",
+            "Wildlife viewing: hippos, crocodiles, waterbirds",
+            "Cruise culminates at base of Murchison Falls",
+            "Dinner and overnight at lodge"
+          ]
+        },
+        {
+          "time": "Day 2: Game Drive & Return Journey",
+          "activities": [
+            "Early morning breakfast",
+            "Morning game drive in the park",
+            "Wildlife encounters and predator viewing",
+            "Birdwatching (450+ species including shoebill stork)",
+            "Exit park before noon",
+            "Lunch stop in Masindi town or Kabalega Dinners",
+            "Stopover at Equator for photos and stretching",
+            "Evening arrival in Kampala with drop-off at airport or preferred location"
+          ]
+        }
+      ],
+      "inclusions": [
+        "Accommodation and meals",
+        "Car and fuel",
+        "Park entrance fees",
+        "Boat cruise",
+        "Top of the falls visit",
+        "Bottled drinking water during trip",
+        "Professional guide"
+      ],
+      "exclusions": [
+        "Travel insurance",
+        "Visa fees",
+        "International flights",
+        "Tips and gratuities",
+        "Personal items"
+      ],
+      "whatToBring": [
+        "Comfortable safari clothing",
+        "Sturdy walking shoes",
+        "Sun hat and sunscreen",
+        "Binoculars for wildlife viewing",
+        "Camera with extra batteries",
+        "Light jacket for early morning"
+      ],
+      "bookingInfo": {
+        "minimumPax": 1,
+        "maximumPax": 8,
+        "cancellationPolicy": "Cancel up to 3 days in advance for full refund",
+        "paymentTerms": "Confirmation within 48 hours, subject to availability",
+        "accessibility": "Not wheelchair accessible, most travelers can participate"
+      },
+      "categories": ["Wildlife", "Adventure", "Nature", "Multi-day"],
+      "featured": true,
+      "createdAt": "2024-01-22T00:00:00Z",
+      "updatedAt": "2024-01-22T00:00:00Z"
+    }
+  ]
+}

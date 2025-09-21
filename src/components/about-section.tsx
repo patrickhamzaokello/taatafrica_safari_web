@@ -40,42 +40,18 @@ export function AboutSection() {
         <div className="grid md:grid-cols-2 gap-16 items-center">
           {/* Left Column - Logo and Visual Elements */}
           <div
-            className={`transition-all duration-1000 delay-300 ${
-              isInView ? "opacity-100" : "opacity-0 translate-y-10"
-            }`}
+            className="transition-all duration-1000"
           >
             <div className="relative aspect-square max-w-md mx-auto md:mx-0">
               {/* Logo Container with Border */}
-              <div className="absolute inset-0 border border-amber-700/20 p-12">
-                <div className="h-full w-full flex items-center justify-center bg-stone-950/90  -z-11">
-                  {/* Safari Logo */}
-                  <div className="text-center">
-                    <div className="inline-flex items-center justify-center h-30 w-30 mb-6 relative">
-                      <div className="absolute inset-0 rounded-full border border-amber-600/30"></div>
-                      <Image
-                        src="/tatafrica_logo.svg"
-                        alt="Uganda Safari Logo"
-                        width={100}
-                        height={100}
-                        className="object-contain"
-                      />
-                    </div>
-                    <h3 className="font-serif text-3xl text-white tracking-wider">
-                      TATA{" "}
-                      <span className="text-amber-500">AFRICA SAFARIS</span>
-                    </h3>
-                    <p className="text-amber-600/70 text-xs uppercase tracking-widest mt-2">
-                      Est. 2024
-                    </p>
-                  </div>
-                </div>
+              <div className="absolute inset-0 border border-amber-700/20 p-12">                
 
                 {/* Background Image */}
                 <Image
-                  src="https://images.unsplash.com/photo-1516426122078-c23e76319801?q=80&w=2036&auto=format&fit=crop"
+                  src="/tatasafaris.jpg"
                   alt="Safari Experience"
                   fill
-                  className="object-cover object-center -z-10 opacity-30"
+                  className="object-cover object-center p-4"
                 />
               </div>
             </div>
@@ -118,14 +94,7 @@ export function AboutSection() {
             
 
             {/* Signature */}
-            <div className="pt-4">
-              <Image
-                src="/girraff_on_road.png"
-                alt="Director's Signature"
-                width={100}
-                height={100} // Set height equal to width for a perfect circle
-                className="object-cover opacity-70 rounded-[200px]" // Use rounded-full to make it a circle
-              />
+            <div >             
               <p className="text-stone-400 text-sm mt-2">
                 Hannifah Namayega, Founder
               </p>
